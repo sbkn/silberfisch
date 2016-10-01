@@ -3,9 +3,9 @@ export function required(value) {
 }
 
 export function url(value) {
-    return value ? ['This URL is invalid'] : [];
+    return value && !(value.indexOf(".") > -1) ? ['This URL is invalid'] : [];
 }
 
 export function email(value) {
-    return value ? ['This email address is invalid'] : [];
+    return value && !(value.indexOf("@") > -1) ? ['This email address is invalid'] : [];
 }

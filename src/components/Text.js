@@ -24,19 +24,30 @@ export default class Text extends React.Component {
 
     static contextTypes = {
         update: React.PropTypes.func.isRequired,
-        values: React.PropTypes.object.isRequired
+        values: React.PropTypes.object.isRequired,
+        registerValidation: React.PropTypes.func.isRequired
+    };
+
+    static defaultProps = {
+        validate: []
     };
 
     constructor(props) {
         super(props);
         this.onChange = this.onChange.bind(this);
         this.onBlur = this.onBlur.bind(this);
+        this.isValid = this.isValid.bind(this);
         this.state = {errors: []};
     }
 
-    static defaultProps = {
-        validate: []
-    };
+    componentWillMount() {
+        this.removeValidationFromContext = this.context.registerValidation(show =>
+            this.isValid(show));
+    }
+
+    componentWillUnmount() {
+        this.removeValidationFromContext();
+    }
 
     updateValue(value) {
         this.context.update(this.props.name, value);
