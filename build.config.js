@@ -12,13 +12,10 @@ module.exports = {
     },
     module: {
         loaders: [
-            { //transpile ES2015 with JSX into ES5
+            {
                 test: /\.js?$/,
                 exclude: /node_modules/,
-                loader: 'babel',
-                query: {
-                    presets: ['react', 'es2015']
-                }
+                loader: 'babel'
             }
         ]
     }
