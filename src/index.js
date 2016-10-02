@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 import {createStore, applyMiddleware, compose} from 'redux';
 import {connect} from 'react-redux';
 import {Provider} from 'react-redux';
@@ -23,4 +23,3 @@ export default props => (
 
 export {default as Text} from './components/Text';
 export {default as SubmitButton} from './components/SubmitButton';
-
