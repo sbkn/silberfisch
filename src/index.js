@@ -23,3 +23,4 @@ export default props => (
 
 export {default as Text} from './components/Text';
 export {default as SubmitButton} from './components/SubmitButton';
+export {default as Page} from './components/Page';
