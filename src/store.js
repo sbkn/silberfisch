@@ -5,8 +5,9 @@ const initialState = {
 };
 
 /*
+ * REDUCERS:
  * DO NOT EVER USE MUTATING METHODS SUCH AS arr.splice(),
- * THAT IS WHY assign IS BEING USED HERE
+ * THAT IS WHY ...Object IS BEING USED HERE
  */
 export default (state = initialState, action) => {
     switch (action.type) {
